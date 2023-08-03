@@ -1,8 +1,8 @@
-var again = 0;
-var degrees = 0;
-var i = 0;
+var again = 1;
 function start() {
-  if (again === 0) {
+  if (again % 2) {
+    let degrees = 0;
+    let i = 0;
     let op = 1;
     show = setInterval(opa, 50);
     function opa() {
@@ -28,7 +28,45 @@ function start() {
               st1.style.bottom = `${pos / 10}rem`;
               pos++;
               if (pos == 50) clearInterval(small);
-              again++;
+              {
+                again++;
+                document.getElementById("butt").innerHTML = "Back";
+              }
+            }
+          }
+        }
+      }
+    }
+  } else {
+    pos = 50;
+    int1 = setInterval(back1, 10);
+    function back1() {
+      let st1 = document.styleSheets[0].cssRules[1];
+      let st2 = document.styleSheets[0].cssRules[2];
+      st2.style.right = `${pos / 10}rem`;
+      st1.style.bottom = `${pos / 10}rem`;
+      pos--;
+      if (pos == -1) {
+        clearInterval(int1);
+        rot = 45;
+        rotat = setInterval(back2, 10);
+        function back2() {
+          document.getElementById(
+            "heart"
+          ).style.transform = `rotate(${rot}deg)`;
+          rot--;
+          if (rot == -1) {
+            clearInterval(rotat);
+            opicity = 10;
+            int3 = setInterval(back3, 50);
+            function back3() {
+              document.getElementById("heart").style.opacity = opicity / 10;
+              opicity--;
+              if (opicity == -1) {
+                again++;
+                clearInterval(int3);
+                document.getElementById("butt").innerHTML = "Start";
+              }
             }
           }
         }
