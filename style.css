@@ -1,0 +1,32 @@
+#heart{
+    background-color: red;
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    opacity: 0;
+}
+#heart::after{
+    content: '';
+    position: absolute;
+    background-color: red;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+#heart::before{
+    content: '';
+    position: absolute;
+    background-color: red;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+
+}
+button{
+    width: 5rem;
+}
+.container{
+    margin: auto;
+    width: 5rem;
+    margin-top: 10rem;
+}
