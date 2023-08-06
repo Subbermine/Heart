@@ -30,3 +30,10 @@ button{
     width: 5rem;
     margin-top: 10rem;
 }
+#container{
+    transform: translateX(-2.5rem);
+    width: 5rem;
+    margin: auto;
+    margin-top: 10rem;
+    
+}
